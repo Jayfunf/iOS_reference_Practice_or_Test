@@ -8,14 +8,34 @@
 import UIKit
 import CoreData
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    // UIResponder: 앱에서 발생하는 이벤트들을 담고 있는 추상형 인터페이스 객체로 View와 사용자의 이벤트간의 연결을 관리하는 역할임.
+    // UIApplicationDelegate: UIApplication 객체의 작업에 개발자가 접근할 수 있도록 하는 메서드를 담고 있음.
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        NSLog("applicationDidBecomeActive : 앱이 Active 상태가 되었습니다.")
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        NSLog("applicationWillResignActive : 앱이 Active 상태를 포기하고 InActive 상태가 되었습니다.")
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        NSLog("applicationDidEnterBackground : 앱이 Background 상태가 되었습니다.")
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        NSLog("applicationWillEnterForeground : 앱이 Foreground 상태가 되었습니다.")
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        NSLog("applicationWillTerminate : 앱이 곧 종료됩니다.")
     }
 
     // MARK: UISceneSession Lifecycle
